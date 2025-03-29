@@ -1,0 +1,183 @@
+[
+    {
+      "id": "EXP001",
+      "nombre": "María Fernanda Ruiz",
+      "edad": "32",
+      "ci": "12345678",
+      "materia": "Civil",
+      "fechaCreacion": "2023-03-15",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP002",
+      "nombre": "José Antonio Pérez",
+      "edad": "45",
+      "ci": "87654321",
+      "materia": "Familiar",
+      "fechaCreacion": "2023-02-10",
+      "estado": "Abandonado"
+    },
+    {
+      "id": "EXP003",
+      "nombre": "Lucía Gutiérrez",
+      "edad": "29",
+      "ci": "45678912",
+      "materia": "Penal",
+      "fechaCreacion": "2023-05-01",
+      "estado": "Finalizado"
+    },
+    {
+      "id": "EXP004",
+      "nombre": "Carlos Mendoza",
+      "edad": "39",
+      "ci": "65432187",
+      "materia": "Civil",
+      "fechaCreacion": "2023-01-25",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP005",
+      "nombre": "Ana Beatriz Flores",
+      "edad": "51",
+      "ci": "32165498",
+      "materia": "Familiar",
+      "fechaCreacion": "2023-04-20",
+      "estado": "Finalizado"
+    },
+    {
+      "id": "EXP006",
+      "nombre": "Miguel Ángel Soto",
+      "edad": "42",
+      "ci": "14785236",
+      "materia": "Penal",
+      "fechaCreacion": "2023-06-10",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP007",
+      "nombre": "Laura Castro",
+      "edad": "36",
+      "ci": "96325874",
+      "materia": "Civil",
+      "fechaCreacion": "2023-03-25",
+      "estado": "Abandonado"
+    },
+    {
+      "id": "EXP008",
+      "nombre": "Javier Ramírez",
+      "edad": "30",
+      "ci": "25874196",
+      "materia": "Familiar",
+      "fechaCreacion": "2023-02-05",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP009",
+      "nombre": "Valentina Salazar",
+      "edad": "27",
+      "ci": "74185296",
+      "materia": "Penal",
+      "fechaCreacion": "2023-04-30",
+      "estado": "Finalizado"
+    },
+    {
+      "id": "EXP010",
+      "nombre": "Diego Villarroel",
+      "edad": "40",
+      "ci": "36985214",
+      "materia": "Civil",
+      "fechaCreacion": "2023-03-12",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP011",
+      "nombre": "Patricia Jiménez",
+      "edad": "38",
+      "ci": "74123698",
+      "materia": "Penal",
+      "fechaCreacion": "2023-07-05",
+      "estado": "Abandonado"
+    },
+    {
+      "id": "EXP012",
+      "nombre": "Ricardo González",
+      "edad": "33",
+      "ci": "85296374",
+      "materia": "Familiar",
+      "fechaCreacion": "2023-06-15",
+      "estado": "Finalizado"
+    },
+    {
+      "id": "EXP013",
+      "nombre": "Gabriela Martínez",
+      "edad": "26",
+      "ci": "36925814",
+      "materia": "Civil",
+      "fechaCreacion": "2023-05-18",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP014",
+      "nombre": "Tomás Rodríguez",
+      "edad": "50",
+      "ci": "45698723",
+      "materia": "Penal",
+      "fechaCreacion": "2023-04-12",
+      "estado": "Finalizado"
+    },
+    {
+      "id": "EXP015",
+      "nombre": "Sandra Pérez",
+      "edad": "40",
+      "ci": "96385274",
+      "materia": "Familiar",
+      "fechaCreacion": "2023-05-20",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP016",
+      "nombre": "Manuel Gómez",
+      "edad": "45",
+      "ci": "75315984",
+      "materia": "Civil",
+      "fechaCreacion": "2023-03-05",
+      "estado": "Finalizado"
+    },
+    {
+      "id": "EXP017",
+      "nombre": "Claudia Torres",
+      "edad": "29",
+      "ci": "25874198",
+      "materia": "Penal",
+      "fechaCreacion": "2023-06-01",
+      "estado": "Activo"
+    },
+    {
+      "id": "EXP018",
+      "nombre": "Felipe Sánchez",
+      "edad": "34",
+      "ci": "65498731",
+      "materia": "Familiar",
+      "fechaCreacion": "2023-04-28",
+      "estado": "Abandonado"
+    },
+    {
+      "id": "EXP019",
+      "nombre": "Sofía Gómez",
+      "edad": "28",
+      "ci": "85214769",
+      "materia": "Civil",
+      "fechaCreacion": "2023-06-05",
+      "estado": "Finalizado"
+    },
+    {
+      "id": "EXP020",
+      "nombre": "Andrés López",
+      "edad": "44",
+      "ci": "74125839",
+      "materia": "Penal",
+      "fechaCreacion": "2023-07-02",
+      "estado": "Activo"
+    }
+  ]
+  
