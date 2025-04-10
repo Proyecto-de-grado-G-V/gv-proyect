@@ -1,0 +1,35 @@
+version: "3.1"
+
+rules:
+
+- rule: Saludar al usuario
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+
+- rule: Solicitar datos del proceso de divorcio
+  steps:
+  - intent: proceso_divorcio
+  - action: utter_proporcionar_info_divorcio
+
+- rule: Solicitar datos del proceso de herencia
+  steps:
+  - intent: proceso_herencia
+  - action: utter_proporcionar_info_herencia
+
+- rule: Procesar información personal
+  steps:
+  - intent: proporcionar_información_personal
+  - action: action_procesar_informacion_personal
+
+- rule: Despedirse del usuario
+  steps:
+  - intent: despedir
+  - action: utter_despedir
+
+- rule: Manejar mensajes fuera de contexto
+  steps:
+    - intent: fuera_de_contexto
+    - action: action_llm_response
+
+
