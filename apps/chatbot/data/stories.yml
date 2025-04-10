@@ -1,0 +1,124 @@
+version: "3.1"
+
+stories:
+
+- story: consulta_herencia
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: proceso_herencia
+  - action: utter_proporcionar_info_herencia
+  - intent: proporcionar_información_personal
+    entities:
+    - carnet_identidad: "12345678"
+    - edad: "50"
+  - slot_was_set:
+    - carnet_identidad: "12345678"
+    - edad: "50"
+  - action: action_procesar_informacion_personal
+  - intent: despedir
+  - action: utter_despedir
+
+- story: proceso_divorcio
+  steps:
+  - intent: proceso_divorcio
+  - action: utter_proporcionar_info_divorcio
+  - intent: proporcionar_información_personal
+    entities:
+    - nombre: "Elvis"
+    - carnet_identidad: "9330441"
+    - edad: "20"
+  - slot_was_set:
+    - nombre: "Elvis"
+    - carnet_identidad: "9330441"
+    - edad: "20"
+  - action: action_procesar_informacion_personal
+  - intent: despedir
+  - action: utter_despedir
+
+- story: interactive_story_herencia
+  steps:
+  - intent: proceso_herencia
+  - action: utter_proporcionar_info_herencia
+  - intent: proporcionar_información_personal
+    entities:
+    - nombre: gabriela garcia
+    - carnet_identidad: '1334455'
+    - edad: '23'
+  - slot_was_set:
+    - carnet_identidad: '1334455'
+    - nombre: gabriela garcia
+    - edad: '23'
+  - action: action_procesar_informacion_personal
+
+- story: interactive_story_divorcio_luisa
+  steps:
+  - intent: proceso_divorcio
+  - action: utter_proporcionar_info_divorcio
+  - intent: proporcionar_información_personal
+    entities:
+    - nombre: luisa
+    - carnet_identidad: '1563493'
+    - edad: '43'
+  - slot_was_set:
+    - carnet_identidad: '1563493'
+    - nombre: luisa
+    - edad: '43'
+  - action: action_procesar_informacion_personal
+
+- story: interactive_story_divorcio_gabriela
+  steps:
+  - intent: proceso_divorcio
+  - slot_was_set:
+    - tipo_proceso: divorcio
+  - action: utter_proporcionar_info_divorcio
+  - intent: proporcionar_información_personal
+    entities:
+    - nombre: gabriela garcia
+    - carnet_identidad: '13355797'
+    - edad: '21'
+  - slot_was_set:
+    - carnet_identidad: '13355797'
+    - nombre: gabriela garcia
+    - edad: '21'
+  - action: action_procesar_informacion_personal
+
+- story: historia_despedida
+  steps:
+  - intent: despedir
+  - action: utter_despedir
+
+- story: interactive_story_1
+  steps:
+  - intent: despedir
+  - action: utter_despedir 
+  - intent: fuera_de_contexto
+  - action: action_llm_response
+  - intent: proceso_divorcio
+  - slot_was_set:
+    - tipo_proceso: divorcio
+  - action: utter_proporcionar_info_divorcio
+  - intent: proporcionar_información_personal
+    entities:
+    - nombre: gabriela garcia
+    - carnet_identidad: '13355797'
+    - edad: '23'
+  - slot_was_set:
+    - carnet_identidad: '13355797'
+    - nombre: gabriela garcia
+    - edad: '23'
+  - action: action_procesar_informacion_personal
+  - slot_was_set:
+    - materia: Familiar
+  - slot_was_set:
+    - procesos:
+      - Demanda de divorcio
+      - Notificación a la parte demandada
+      - Respuesta de la demanda
+      - Audiencia de conciliación
+      - Juicio
+      - Sentencia definitiva
+  - slot_was_set:
+    - precio: 4500
+  - intent: fuera_de_contexto
+  - action: action_llm_response
