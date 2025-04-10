@@ -1,0 +1,81 @@
+version: '3.1'
+
+intents:
+  - saludar
+  - despedir
+  - fuera_de_contexto
+  - proceso_divorcio
+  - proceso_herencia
+  - proporcionar_información_personal
+
+entities:
+  - edad
+  - carnet_identidad
+  - nombre
+  - tipo_proceso
+
+slots:
+  carnet_identidad:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: carnet_identidad
+  nombre:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nombre
+  edad:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: edad
+  tipo_proceso:
+    type: text
+    mappings:
+      - type: from_intent
+        value: herencia
+        intent: proceso_herencia
+      - type: from_intent
+        value: divorcio
+        intent: proceso_divorcio
+  materia:
+    type: text
+    mappings:
+      - type: custom
+  procesos:
+    type: list
+    mappings:
+      - type: custom
+  precio:
+    type: float
+    mappings:
+      - type: custom
+
+responses:
+  utter_saludar:
+    - text: "¡Hola! ¿En qué puedo ayudarte? Puedo brindarte información sobre procesos de divorcio o herencia."
+
+  utter_proporcionar_info_divorcio:
+    - text: "Por favor, proporciona los siguientes datos para ayudarte con tu proceso de divorcio: nombre completo, número de carnet de identidad y edad."
+
+  utter_proporcionar_info_herencia:
+    - text: "Por favor, proporciona tu nombre completo, número de carnet de identidad y tu edad."
+
+  utter_cotizacion_enviada:
+    - text: "¡Tu perfil ha sido creado exitosamente!"
+
+  utter_despedir:
+    - text: "¡Gracias por tu consulta! ¿Hay algo más en lo que pueda ayudarte?"
+
+
+actions:
+  - utter_proporcionar_info_divorcio
+  - utter_proporcionar_info_herencia
+  - action_procesar_informacion_personal
+  - action_default_fallback
+  - action_llm_response
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
