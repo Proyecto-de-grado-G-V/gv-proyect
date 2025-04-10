@@ -1,0 +1,6 @@
+@CaseFiles.API_HostAddress = http://localhost:5201
+
+GET {{CaseFiles.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
