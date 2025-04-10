@@ -1,0 +1,88 @@
+version: "3.1"
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - hey
+    - saludos
+- intent: proceso_divorcio
+  examples: |
+    - estoy atravesando un divorcio
+    - mi esposa me está abandonando
+    - mi pareja me pidió el divrcio
+    - quiero info sobre el divorcio
+    - qué debo hacer si me pidieron el divorcio
+    - cómo afrontar un dvorcio
+    - quiero pedir el divorcio
+    - buenas, como esta, le comento que estoy atravesando un divorcio :(
+    - quiero divorciarme de mi esposo
+    - quiero divorciarme con mi esposo
+    - quiero divorciarme de mi esposa
+    - quiero divorciarme con mi esposa
+    - quiero divorciarme de mi esposo, me dejo por otra
+    - quiero el divorcio, mi esposo me fue infiel
+    - mi esposo me dejo, quiero divorciarme
+- intent: proceso_herencia
+  examples: |
+    - quisiera distribuir mi herencia
+    - como puedo legalizar la herencia
+    - mi padre acaba de fallecer, como podemos distribuir la herencia con mi familia
+    - necesito orientación sobre herencia
+    - tengo problemas con mis hermanos sobre la herencia
+    - quiero reclamar mi parte de la herencia
+    - herencia
+    - hrencia
+    - quiero herenca
+    - como afrontar una herencia
+    - hrenca
+    - tenemos problemas por herencia
+    - que es herencia
+    - hola amigo, le comento que tengo problemas con la herencia de mi abuelo
+    - quiero parte de mi herencia demi fcamilia
+- intent: proporcionar_información_personal
+  examples: |
+    - mi nombre es [elvis](nombre), mi carnet de identidad es [9330441](carnet_identidad) y mi edad es [20](edad) años
+    - mi nombre es [elvis](nombre) mi carnet de identidad es [9330441](carnet_identidad) y mi edad es [20](edad) a;os
+    - soy [gabriela garcia v](nombre) y mi ci es [13355797](carnet_identidad) tengo [20](edad) año de edad
+    - mi nombre es [gabriela garcia villalobos](nombre) y tengo [21](edad) años de edad, mi ci es [1337767](carnet_identidad)
+    - mi nombre es [gabriela garcia](nombre) y mi ci es [1334455](carnet_identidad) tengo [23](edad) años de edad
+    - mi nombre es [ana maría](nombre) y mi carnet de identidad es [98765432](carnet_identidad), tengo [25](edad) años
+    - soy [juan perez](nombre), mi ci es [87654321](carnet_identidad) y tengo [30](edad) años
+    - mi nombre es [pedro rodríguez](nombre), mi ci es [34567890](carnet_identidad) y tengo [35](edad) años
+    - me llamo [luis perez](nombre), mi carnet de identidad es [55555555](carnet_identidad), tengo [40](edad) años
+    - mi nombre es [luisa](nombre) guerrera, mi carnet de identidad es [1563493](carnet_identidad) y tengo [43](edad) años
+    - mi nombre es [gabriela garcia](nombre), mi ci es [13355797](carnet_identidad) y tengo [21](edad) años de edad
+    - mi nombre es [gabriela garcia](nombre), mi CI es [13355797](carnet_identidad) y tengo [23](edad) años de edad
+- intent: despedir
+  examples: |
+    - adiós
+    - hasta luego
+    - gracias, eso es todo
+    - chao
+    - bye
+- intent: fuera_de_contexto
+  examples: |
+    - Quiero arreglar mi celular
+    - Dónde puedo encontrar un doctor?
+    - Me recomiendas un restaurante?
+    - Necesito ayuda con mi auto
+    - Puedes darme información sobre préstamos bancarios?
+    - Quiero saber sobre adopción de mascotas
+    - quiero arreglar mi celular
+    - ihhfjajfhaufhuaa
+    - mis uñas estan bonitas?
+    - mi inmueble esta roto que hago
+    - quiero vender mi inmueble
+    - ahuhdf
+    - que piensas de mi?
+    - soy bonita no?
+    - inventario e inmuebles que necesito vender que hago
+    - pucha
+    - uhhauhdh
+    - pwdjovnkm
+    - soy bonita?
+- regex: carnet_identidad
+  examples: |
+    - \b\d{6,10}\b
