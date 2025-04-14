@@ -88,10 +88,20 @@ class ActionLLMResponse(Action):
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
         headers = {"Content-Type": "application/json"}
         payload = {
-            "contents": [{
-                "parts": [{"text": f"Eres un asistente legal en Bolivia. El usuario dice: {user_message}"}]
+        "contents": [{
+            "parts": [{
+                "text": (
+                    "Eres un asistente legal virtual que trabaja para un bufete de abogados en Bolivia, Cochabamba. "
+                    "Estás especializado en brindar orientación inicial y cotizaciones estándar para procesos legales "
+                    "en materia penal, familiar y civil. También ayudas a los usuarios a crear su perfil legal, "
+                    "recolectando información relevante como nombre completo, número de cédula de identidad, "
+                    "edad, y tipo de proceso de interés. "
+                    f"El usuario ha dicho: {user_message}"
+                    )
+                }]
             }]
         }
+
 
         try:
             response = requests.post(url, json=payload, headers=headers)
