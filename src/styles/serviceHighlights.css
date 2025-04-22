@@ -1,0 +1,41 @@
+.highlights-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #121212; /* Fondo oscuro como el del ejemplo */
+    color: #f0f0f0;
+  }
+  
+  .highlight-box {
+    flex: 1 1 250px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+  }
+  
+  .highlight-icon {
+    font-size: 36px;
+    color: #d4af37; /* Dorado */
+    margin-bottom: 10px;
+  }
+  
+  .highlight-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: var(--thm-font);
+  }
+  
+  .highlight-box p {
+    font-size: 16px;
+    color: #cccccc;
+    font-family: var(--thm-b-font);
+  }
+  

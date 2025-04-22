@@ -1,0 +1,67 @@
+/* Estilos del Header */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Para alinear el logo a la izquierda y los links al centro */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Hace que el header se quede fijo cuando se hace scroll */
+    top: 0; /* Se mantiene siempre en la parte superior */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 40px; /* Separar el logo 40px del borde izquierdo */
+  }
+  
+  .logo {
+    height: 40px;
+    width: 90px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Asegura que los enlaces de navegación estén centrados */
+    flex: 1; /* Ocupa todo el espacio disponible para centrar los enlaces */
+  }
+  
+  .nav-item {
+    font-size: 12px; /* Tamaño de la letra más pequeño */
+    color: var(--thm-secondary); /* Color */
+    text-decoration: none;
+    font-weight: 600; /* Peso de la fuente */
+    text-transform: uppercase; /* Transformar a mayúsculas */
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: var(--thm-base); /* Cambio de color al hacer hover */
+  }
+  
+  /* Enlaces del header */
+  .nav-links a {
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .nav-links a:hover {
+    background-color: var(--hover-color);
+    color: var(--thm-base);
+  }
+  
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  
