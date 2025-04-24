@@ -2,16 +2,10 @@ namespace CaseFiles.Domain.Models;
 
 public enum LegalSubmatterType
 {
-    Inheritance,
-    Custody,
-    Divorce,
-    Alimony,
-    
-    UnjustDismissal,
-    Compensation,
-    
-    ContractDispute,
-    PropertyDispute,
-    
-    Other
+    Inheritance = 0,
+
+    Custody = 1,
+    Divorce = 2,
+
+    Femicide = 3
 } 
