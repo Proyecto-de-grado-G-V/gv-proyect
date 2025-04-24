@@ -1,4 +1,4 @@
-namespace CaseFiles.Domain.Models;
+namespace LegalProcessQuoting.Domain.Models;
 
 public enum LegalSubmatterType
 {
