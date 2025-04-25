@@ -63,18 +63,6 @@ const Reporte = () => {
         </BarChart>
       </ResponsiveContainer>
 
-      <h3>Expedientes por Fecha de Creación</h3>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={fechaData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="value" fill="#6c5b3d" />
-        </BarChart>
-      </ResponsiveContainer>
-
       <h3>Expedientes por Estado</h3>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={estadoData}>

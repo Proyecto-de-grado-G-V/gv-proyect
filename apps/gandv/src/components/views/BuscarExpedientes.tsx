@@ -1,15 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FiFolder, FiSearch, FiFilter } from 'react-icons/fi'
-import expedientesData from '@/data/expedientes.json'
 import '../../styles/buscarExpedientes.css'
-
-interface Expediente {
-  id: string;
-  nombre: string;
-  materia: string;
-  ci: string;
-  fechaCreacion: string;  
-}
+import { fetchLegalCaseFiles } from '@/app/services/LegalCaseFile'
 
 const BuscarExpedientes = () => {
   const [search, setSearch] = useState('')
@@ -21,8 +13,12 @@ const BuscarExpedientes = () => {
   const [selectedCI, setSelectedCI] = useState('') 
 
   useEffect(() => {
-    setExpedientes(expedientesData)
-  }, [])
+    const loadProducts = async () => {
+      const result = await fetchLegalCaseFiles();
+      setExpedientes(result);
+    };
+    loadProducts();
+  }, []);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedFilter(e.target.value)
@@ -41,17 +37,17 @@ const BuscarExpedientes = () => {
   }
 
   const filtrados = expedientes.filter(e =>
-    (selectedMateria === '' || e.materia.toLowerCase() === selectedMateria.toLowerCase()) && 
+    (selectedMateria === '' || e.matter.toLowerCase() === selectedMateria.toLowerCase()) && 
     (selectedCI === '' || e.ci.includes(selectedCI)) && 
-    (selectedFilter === 'nombre' ? e.nombre.toLowerCase().includes(search.toLowerCase()) :
-    selectedFilter === 'materia' ? e.materia.toLowerCase().includes(search.toLowerCase()) :
+    (selectedFilter === 'nombre' ? e.clientFullName.toLowerCase().includes(search.toLowerCase()) :
+    selectedFilter === 'materia' ? e.matter.toLowerCase().includes(search.toLowerCase()) :
     selectedFilter === 'ci' ? e.ci.includes(search) :
-    e.fechaCreacion.includes(search) || false)
+    e.createdAt.includes(search) || false)
   )
 
   const expedientesOrdenados = filtrados.sort((a, b) => {
-    const dateA = new Date(a.fechaCreacion).getTime()
-    const dateB = new Date(b.fechaCreacion).getTime()
+    const dateA = new Date(a.createdAt).getTime()
+    const dateB = new Date(b.createdAt).getTime()
     
     return selectedOrden === 'desc' ? dateB - dateA : dateA - dateB
   })
@@ -126,8 +122,8 @@ const BuscarExpedientes = () => {
         {expedientesOrdenados.map(exp => (
           <li key={exp.id} className="expediente-item">
             <FiFolder size={20} className="expediente-icon" />
-            <span><strong>{exp.nombre}</strong> - {exp.materia} - {exp.ci}</span>
-            <span className="fecha">{new Date(exp.fechaCreacion).toLocaleDateString()}</span>
+            <span><strong>{exp.clientFullName}</strong> - {exp.matter} - {exp.ci}</span>
+            <span className="fecha">{new Date(exp.createdAt).toLocaleDateString()}</span>
           </li>
         ))}
       </ul>
