@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import '../../styles/galeria.css';
+import '../../styles/gallery.css';
 
 const images = [
   'https://metropolitanhost.com/themes/templatemoster/html/powar/lawzy/assets/img/home-1/540x600.jpg',
@@ -9,7 +9,7 @@ const images = [
   'https://metropolitanhost.com/themes/templatemoster/html/powar/lawzy/assets/img/home-1/540x285-0.jpg',
 ];
 
-const Galeria: React.FC = () => {
+const Gallery: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const closeModal = () => setSelectedIndex(null);
@@ -56,4 +56,4 @@ const Galeria: React.FC = () => {
   );
 };
 
-export default Galeria;
+export default Gallery;

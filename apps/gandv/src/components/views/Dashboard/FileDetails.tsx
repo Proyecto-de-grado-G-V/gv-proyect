@@ -1,4 +1,4 @@
-import '../../styles/expedienteDetalle.css'
+import '../../styles/fileDetails.css'
 import { FiFileText } from 'react-icons/fi'
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   }
 }
 
-export default function ExpedienteDetalle({ expediente }: Props) {
+export default function FileDetails({ expediente }: Props) {
   return (
     <div className="expediente-detalle">
       <div className="encabezado">

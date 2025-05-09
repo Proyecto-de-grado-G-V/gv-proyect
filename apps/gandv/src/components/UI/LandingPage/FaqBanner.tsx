@@ -1,6 +1,6 @@
 import "../../styles/faqBanner.css";
 import { useState } from "react";
-import faq from "../../data/preguntas.json"; 
+import faq from "../../../data/preguntas.json"; 
 
 interface FAQ {
   question: string;

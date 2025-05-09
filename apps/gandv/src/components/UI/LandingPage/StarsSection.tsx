@@ -1,11 +1,11 @@
 import React from 'react';
-import '../../styles/stats.css';
+import '../../styles/starsSection.css';
 
 const StatsSection = () => {
   const stats = [
-    { number: '1340+', label: 'Clients' },
-    { number: '100+', label: 'Years Practical Experience' },
-    { number: '11200+', label: 'Cases Won' },
+    { number: '150+', label: 'Clientes' },
+    { number: '25+', label: 'Años de experiencia práctica' },
+    { number: '150+', label: 'Casos Ganados' },
   ];
 
   return (

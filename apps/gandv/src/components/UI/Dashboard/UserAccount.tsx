@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import userImage from '@/assets/image/user.png';
-import '../../styles/cuentaUsuario.css';
+import '../../styles/UserAccount.css';
 
-export default function CuentaUsuario() {
+export default function UserAccount() {
   const [usuario, setUsuario] = useState<any>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [tempNombre, setTempNombre] = useState('');

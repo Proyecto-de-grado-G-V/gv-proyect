@@ -1,6 +1,6 @@
 import React from "react";
-import "../../styles/areasDePractica.css";
-import areas from "../../data/areasDePractica.json";
+import "../../styles/practiceAreas.css";
+import areas from "../../../data/areasDePractica.json";
 
 interface Area {
   titulo: string;
@@ -9,7 +9,7 @@ interface Area {
   imagen: string;
 }
 
-const AreasDePractica: React.FC = () => {
+const PracticeAreas: React.FC = () => {
   return (
     <section className="areas-de-practica">
       <h2>Áreas de práctica</h2>
@@ -32,4 +32,4 @@ const AreasDePractica: React.FC = () => {
   );
 };
 
-export default AreasDePractica;
+export default PracticeAreas;

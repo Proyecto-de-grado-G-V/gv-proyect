@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../../styles/crearExpedienteModal.css'
+import '../../styles/createModalFile.css'
 
 type Props = {
   onClose: () => void
@@ -11,7 +11,7 @@ type Props = {
   }) => void
 }
 
-export default function CrearExpedienteModal({ onClose, onCreate }: Props) {
+export default function CreateModalFile({ onClose, onCreate }: Props) {
   const [nombre, setNombre] = useState('')
   const [edad, setEdad] = useState('')
   const [ci, setCI] = useState('')
