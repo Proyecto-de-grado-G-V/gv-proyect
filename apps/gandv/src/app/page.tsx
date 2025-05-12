@@ -1,16 +1,16 @@
 'use client'
 
-import HeroSection from '@/components/UI/HeroSection'
-import ServiceHighlights from '@/components/UI/ServiceHighlights'
+import HeroSection from '@/components/UI/LandingPage/HeroSection'
+import ServiceHighlights from '@/components/UI/LandingPage/ServiceHighlights'
 import FloatingCart from '@/components/UI/FloatingChat'
-import HeroBanner from '@/components/UI/HeroBanner'
-import AboutUs from '@/components/UI/AboutUs';
-import AreasDePractica from '@/components/views/AreasDePractica';
+import HeroBanner from '@/components/UI/LandingPage/HeroBanner'
+import AboutUs from '@/components/UI/LandingPAge/AboutUs';
+import PracticeAreas from '@/components/UI/LandingPage/PracticeAreas';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Galeria from '@/components/views/Galeria';
-import LawyerSection from '@/components/views/LawyerSection';
+import Galeria from '@/components/UI/LandingPage/Gallery';
+import LawyerSection from '@/components/UI/LandingPage/LawyerSection';
 import ContactSection from '@/components/views/ContactSection';
-import StatsSection from '@/components/views/StarsSection';
+import StatsSection from '@/components/UI/LandingPage/StarsSection';
 
 export default function Page() {
 
@@ -21,7 +21,7 @@ export default function Page() {
       <AboutUs />
       <Galeria />
       <StatsSection />
-      <AreasDePractica />
+      <PracticeAreas />
       <LawyerSection />
       <HeroSection />
       <ContactSection />

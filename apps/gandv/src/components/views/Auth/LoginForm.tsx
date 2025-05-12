@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { auth } from "@/firebase";
 import { useRouter } from "next/navigation";
+import '../../styles/authSection.css';
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");

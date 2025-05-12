@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import '../../styles/reporte.css';
+import '../../styles/report.css';
 import expedientesData from '@/data/expedientes.json'
 
-const Reporte = () => {
+const Report = () => {
   const [materiaData, setMateriaData] = useState<any>([]);
   const [fechaData, setFechaData] = useState<any>([]);
   const [estadoData, setEstadoData] = useState<any>([]);
@@ -78,4 +78,4 @@ const Reporte = () => {
   );
 };
 
-export default Reporte;
+export default Report;

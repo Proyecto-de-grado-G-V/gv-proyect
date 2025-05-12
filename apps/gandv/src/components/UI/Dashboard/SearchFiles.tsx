@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { FiFolder, FiSearch, FiFilter } from 'react-icons/fi'
-import '../../styles/buscarExpedientes.css'
+import '../../styles/searchFiles.css'
 import { fetchLegalCaseFiles } from '@/app/services/LegalCaseFile'
 
-const BuscarExpedientes = () => {
+const SearchFiles = () => {
   const [search, setSearch] = useState('')
   const [expedientes, setExpedientes] = useState<Expediente[]>([])
   const [selectedFilter, setSelectedFilter] = useState('nombre')
@@ -131,4 +131,4 @@ const BuscarExpedientes = () => {
   )
 }
 
-export default BuscarExpedientes
+export default SearchFiles

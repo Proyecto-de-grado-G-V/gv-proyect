@@ -1,7 +1,7 @@
 'use client'
 
-import Footer from '@/components/UI/Footer'
-import Header from '@/components/UI/Header'
+import Footer from '@/components/UI/LandingPage/Footer'
+import Header from '@/components/UI/LandingPage/Header'
 import { ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import '../styles/globals.css'

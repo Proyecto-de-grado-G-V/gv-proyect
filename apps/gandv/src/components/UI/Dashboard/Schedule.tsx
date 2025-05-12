@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid"; 
 import interactionPlugin from "@fullcalendar/interaction"; 
-import "../../styles/calendario.css";
+import "../../styles/schedule.css";
 
-const Calendario = () => {
+const Schedule = () => {
   const [events, setEvents] = useState<EventType[]>([
     {
       title: "Respuesta a la Audiencia Judicial",
@@ -150,7 +150,7 @@ function renderEventContent(eventInfo: any) {
   );
 }
 
-export default Calendario;
+export default Schedule;
 
 interface EventType {
   title: string;

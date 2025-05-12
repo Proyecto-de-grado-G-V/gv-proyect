@@ -57,7 +57,7 @@
   border: none;
   border-radius: 4px;
   background-color: var(--light);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px var(--thm-shadow-light);
   outline: none;
 }
 
