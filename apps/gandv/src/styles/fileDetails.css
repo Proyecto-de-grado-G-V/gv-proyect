@@ -1,0 +1,28 @@
+.expediente-detalle {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px var(--thm-shadow-light);
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--thm-border-light);
+  margin-bottom: 1rem;
+}
+
+.encabezado h2 {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.fecha {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.info p {
+  margin: 0.5rem 0;
+}
