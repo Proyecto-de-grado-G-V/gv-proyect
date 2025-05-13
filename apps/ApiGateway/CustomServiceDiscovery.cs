@@ -12,8 +12,9 @@ public class CustomServiceDiscovery
     public CustomServiceDiscovery(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _serviceRegistryUrl = Environment.GetEnvironmentVariable("SERVICE_DISCOVERY_URL") 
-                              ?? throw new Exception("SERVICE_DISCOVERY_URL not set in environment variables.");
+        _serviceRegistryUrl =
+            Environment.GetEnvironmentVariable("SERVICE_DISCOVERY_URL")
+            ?? throw new Exception("SERVICE_DISCOVERY_URL not set in environment variables.");
     }
 
     private async Task<Dictionary<string, List<string>>> GetServicesAsync()
@@ -27,12 +28,11 @@ public class CustomServiceDiscovery
         var services = await GetServicesAsync();
         return services.ContainsKey(serviceName) ? services[serviceName].FirstOrDefault() : null;
     }
-    
+
     public async Task<List<string>> GetServiceUrisAsync(string serviceName)
     {
         var services = await GetServicesAsync();
         Console.WriteLine(services.Count);
         return services.ContainsKey(serviceName) ? services[serviceName] : new List<string>();
     }
-
 }
