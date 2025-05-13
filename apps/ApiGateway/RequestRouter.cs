@@ -1,15 +1,25 @@
 ﻿namespace ApiGateway;
 
-public class RequestRouter(CustomServiceDiscovery serviceDiscovery, IHttpClientFactory httpClientFactory)
+public class RequestRouter(
+    CustomServiceDiscovery serviceDiscovery,
+    IHttpClientFactory httpClientFactory
+)
 {
     private readonly HttpClient _httpClient = httpClientFactory.CreateClient();
     private static readonly Dictionary<string, int> _serviceIndices = new();
 
-    public async Task<HttpResponseMessage> RedirectRequestAsync(string serviceName, string downstreamPath, HttpRequestMessage request, string queryString)
+    public async Task<HttpResponseMessage> RedirectRequestAsync(
+        string serviceName,
+        string downstreamPath,
+        HttpRequestMessage request,
+        string queryString
+    )
     {
         var serviceUri = await GetServiceUriAsync(serviceName);
         Console.WriteLine(new string('=', 50));
-        Console.WriteLine($"[{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss}] >>> SERVICE USED: {serviceUri} <<<");
+        Console.WriteLine(
+            $"[{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss}] >>> SERVICE USED: {serviceUri} <<<"
+        );
         Console.WriteLine(new string('=', 50));
 
         var downstreamUrl = BuildDownstreamUrl(serviceUri, downstreamPath, queryString);
@@ -34,11 +44,14 @@ public class RequestRouter(CustomServiceDiscovery serviceDiscovery, IHttpClientF
         return $"{serviceUri}/{downstreamPath}{queryString}";
     }
 
-    private HttpRequestMessage CreateDownstreamRequest(HttpRequestMessage originalRequest, string downstreamUrl)
+    private HttpRequestMessage CreateDownstreamRequest(
+        HttpRequestMessage originalRequest,
+        string downstreamUrl
+    )
     {
         var downstreamRequest = new HttpRequestMessage(originalRequest.Method, downstreamUrl)
         {
-            Content = originalRequest.Content
+            Content = originalRequest.Content,
         };
 
         foreach (var header in originalRequest.Headers)
@@ -49,11 +62,13 @@ public class RequestRouter(CustomServiceDiscovery serviceDiscovery, IHttpClientF
         return downstreamRequest;
     }
 
-    private async Task<HttpResponseMessage> SendDownstreamRequestAsync(HttpRequestMessage downstreamRequest)
+    private async Task<HttpResponseMessage> SendDownstreamRequestAsync(
+        HttpRequestMessage downstreamRequest
+    )
     {
         return await _httpClient.SendAsync(downstreamRequest);
     }
-    
+
     private string GetNextInstance(List<string> instances, string serviceName)
     {
         if (!_serviceIndices.ContainsKey(serviceName))
