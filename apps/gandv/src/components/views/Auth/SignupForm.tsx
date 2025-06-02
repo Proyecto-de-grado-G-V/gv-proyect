@@ -7,7 +7,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '@/firebase'; 
 import { setDoc, doc } from 'firebase/firestore'; 
 import { useRouter } from 'next/navigation'; 
-import '../../styles/authSection.css';
+import '../../../styles/authSection.css';
 
 export default function SignupForm() {
   const [username, setUsername] = useState('');

@@ -1,9 +1,13 @@
 import React from 'react';
-import '../../styles/contactSection.css';
+import '../../../styles/contactSection.css';
 
-const ContactSection: React.FC = () => {
+interface ContactSectionProps {
+  id?: string;
+}
+
+const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
   return (
-    <section className="contact-section">
+    <section id={id} className="contact-section">
       <div className="form-container">
         <p className="section-subtitle">Llamada a la acción</p>
         <h2 className="section-title">Hacer una solicitud</h2>
@@ -17,7 +21,7 @@ const ContactSection: React.FC = () => {
       <div className="map-container">
         <iframe
           title="Ubicación"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9991451228447!2d2.292292615674863!3d48.85837307928701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fdeb0c8dfbb%3A0x89b0c0a1f6b473bd!2sTour%20Eiffel!5e0!3m2!1ses!2sfr!4v1712935721075!5m2!1ses!2sfr"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.95919250772425!2d-66.15274952912961!3d-17.39512341792289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373f98d89d9b3%3A0x843f605390655716!2sPlotter%20UltraPlot!5e0!3m2!1ses!2sbo!4v1748448747639!5m2!1ses!2sbohttps://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.95919250772425!2d-66.15274952912961!3d-17.39512341792289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373f9f00c853f%3A0x3ade81fd20bcc0ca!2sC.%20Lanza%20101%2C%20Cochabamba!5e0!3m2!1ses!2sbo!4v1748448843882!5m2!1ses!2sbo"
           width="100%"
           height="100%"
           style={{ border: 0 }}

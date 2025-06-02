@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import "../../styles/header.css";
+import "../../../styles/header.css";
 import Image from "next/image";
 import logo from "@/assets/image/logo.png";
 
@@ -31,25 +31,25 @@ export default function Header() {
         </Link>
       </div>
       <nav className="nav-links">
-        <Link href="/" className="nav-item">
+        <Link href="/#hero" className="nav-item">
           Inicio
         </Link>
-        <Link href="/services" className="nav-item">
+        <Link href="/#services" className="nav-item">
           Servicios
         </Link>
-        <Link href="/practice-areas" className="nav-item">
-          Áreas de práctica
-        </Link>
-        <Link href="/gallery" className="nav-item">
-          Galería
-        </Link>
-        <Link href="/attorney" className="nav-item">
-          Abogados
-        </Link>
-        <Link href="/about" className="nav-item">
+        <Link href="/#about" className="nav-item">
           Sobre Nosotros
         </Link>
-        <Link href="/contact" className="nav-item">
+        <Link href="/#gallery" className="nav-item">
+          Galería
+        </Link>
+        <Link href="/#practice-areas" className="nav-item">
+          Áreas de práctica
+        </Link>
+        <Link href="/#lawyers" className="nav-item">
+          Abogados
+        </Link>
+        <Link href="/#contact" className="nav-item">
           Contacto
         </Link>
         <Link href="/faq" className="nav-item">

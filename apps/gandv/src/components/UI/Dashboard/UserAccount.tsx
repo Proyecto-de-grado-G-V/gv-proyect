@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import userImage from '@/assets/image/user.png';
-import '../../styles/UserAccount.css';
+import '../../../styles/userAccount.css';
 
 export default function UserAccount() {
   const [usuario, setUsuario] = useState<any>(null);

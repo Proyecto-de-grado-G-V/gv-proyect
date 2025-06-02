@@ -1,10 +1,14 @@
 import React from "react";
-import "../../styles/serviceHighlights.css";
+import "../../../styles/serviceHighlights.css";
 import { FaCheckCircle, FaUserTie, FaThumbsUp, FaHandshake } from "react-icons/fa";
 
-const ServiceHighlights = () => {
+interface ServiceHighlightsProps {
+  id?: string;
+}
+
+const ServiceHighlights: React.FC<ServiceHighlightsProps> = ({ id }) => {
   return (
-    <section className="highlights-container">
+    <section id={id} className="highlights-container">
       <div className="highlight-box">
         <FaCheckCircle className="highlight-icon" />
         <h3>Orientado al cliente</h3>

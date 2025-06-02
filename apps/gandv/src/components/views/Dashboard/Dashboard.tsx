@@ -4,7 +4,7 @@ import CrearExpedienteModal from '@/components/UI/Dashboard/CreateModalFile'
 import ExpedienteDetalle from '@/components/views/Dashboard/FileDetails'
 import BuscarExpedientes from '@/components/UI/Dashboard/SearchFiles'
 import CuentaUsuario from '@/components/UI/Dashboard/UserAccount'
-import '../../styles/dashboard.css'
+import '../../../styles/dashboard.css'
 import Schedule from '../../UI/Dashboard/Schedule'
 import Reporte from '../../UI/Dashboard/Report'
 
@@ -39,7 +39,6 @@ export default function Dashboard() {
         {currentTab === 'cuenta' && <CuentaUsuario />}
         {currentTab === 'calendario' && <Schedule />} 
         {currentTab === 'reporte' && <Reporte />} 
-
         {modalVisible && (
           <CrearExpedienteModal
             onClose={() => setModalVisible(false)}

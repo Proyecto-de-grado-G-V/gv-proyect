@@ -4,6 +4,7 @@ import { LegalMatterType } from '../types/Enums';
 export const fetchLegalCaseFiles = async (): Promise<Expediente[]> => {
   try {
     const response = await axios.get<Expediente[]>('/api/caseFiles/');
+    console.log('API Response:', response.data);
 
     if (Array.isArray(response.data)) {
       return response.data.map(expediente => ({

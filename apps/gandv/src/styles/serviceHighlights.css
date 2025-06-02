@@ -1,29 +1,39 @@
 .highlights-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
-  max-width: 1300px;
   margin: 0 auto;
-  padding: 40px 20px;
-  background-color: var(--thm-secondary);
-  color: var(--thm-footer-text);
+  padding: 20px;
+  background-color: var(--thm-light-gray);
+  color: var(--thm-text-dark);
+  gap: 20px;
 }
 
 .highlight-box {
   flex: 1 1 250px;
   text-align: center;
-  padding: 20px;
-  margin: 10px;
-  background-color: var(--thm-secondary-hover);
-  border-radius: 10px;
+  padding: 24px;
+  background-color: var(--thm-secondary);
+  border-radius: 12px;
   box-shadow: 0 4px 15px var(--thm-shadow-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 180px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px var(--thm-shadow-hover);
 }
 
 .highlight-icon {
-  font-size: 36px;
-  color: var(--thm-button-base);
-  margin-bottom: 10px;
+  font-size: 50px;
+  color: var(--thm-base-hover);
+  margin: 0 auto 10px auto;
 }
 
 .highlight-box h3 {
@@ -31,10 +41,40 @@
   font-weight: 700;
   margin-bottom: 10px;
   font-family: var(--thm-font);
+  color: var(--white);
 }
 
 .highlight-box p {
-  font-size: 16px;
-  color: var(--thm-footer-text);
+  font-size: 15px;
+  color: var(--white);
   font-family: var(--thm-b-font);
+}
+
+.highlight-button {
+  padding: 10px 10px;
+  background-color: var(--thm-base);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--thm-b-font);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  box-sizing: border-box; 
+}
+
+.highlight-button:hover {
+  background-color: var(--thm-base-hover);
+  box-shadow: 0 4px 10px var(--thm-shadow-medium);
+}
+
+@media (max-width: 768px) {
+  .highlights-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .highlight-box {
+    margin: 15px 0;
+  }
 }

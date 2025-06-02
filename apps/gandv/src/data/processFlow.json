@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Demanda Familiar",
+    "description": "Divorcio, Asistencia familiar, guarda de los menores, División y partición de los bienes, adopción, interdicción, emancipación de los menores de edad, impugnación a la paternidad, y nulidad a la paternidad",
+    "tasks": ["Presentar documentos", "Revisión inicial", "Asignar abogado"]
+  },
+  {
+    "id": 2,
+    "title": "Término de Prueba",
+    "description": "Reproducción de las pruebas y judicialización de las pruebas en audiencia pública",
+    "tasks": ["Preparar pruebas", "Notificar a las partes", "Programar audiencia"]
+  },
+  {
+    "id": 3,
+    "title": "Audiencia Preliminar",
+    "description": "",
+    "tasks": ["Presentar argumentos", "Registrar actas"]
+  },
+  {
+    "id": 4,
+    "title": "Audiencia Complementaria",
+    "description": "",
+    "tasks": ["Revisar pruebas adicionales", "Emitir conclusiones"]
+  },
+  {
+    "id": 5,
+    "title": "Sentencia",
+    "description": "Es apelada a la sala familiar departamental de justicia",
+    "tasks": ["Emitir sentencia", "Notificar a las partes"]
+  }
+]

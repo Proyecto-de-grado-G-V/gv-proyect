@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FiHome, FiSearch, FiBarChart, FiCalendar, FiUser } from 'react-icons/fi';
 import logo from '@/assets/image/logo.png';
-import '../../styles/dashboard.css';
+import '../../../styles/dashboard.css';
 
 type Props = {
   onTabChange: (tab: string) => void;

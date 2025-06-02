@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { FiFolder, FiSearch, FiFilter } from 'react-icons/fi'
-import '../../styles/searchFiles.css'
+import '../../../styles/searchFiles.css'
 import { fetchLegalCaseFiles } from '@/app/services/LegalCaseFile'
 
 const SearchFiles = () => {

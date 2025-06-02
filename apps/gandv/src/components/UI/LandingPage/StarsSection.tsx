@@ -1,7 +1,11 @@
 import React from 'react';
-import '../../styles/starsSection.css';
+import '../../../styles/starsSection.css';
 
-const StatsSection = () => {
+interface StartServiceProps {
+  id?: string;
+}
+
+const StatsSection: React.FC<StartServiceProps> = ({ id }) => {
   const stats = [
     { number: '150+', label: 'Clientes' },
     { number: '25+', label: 'Años de experiencia práctica' },
@@ -9,7 +13,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="stats-section">
+    <section id={id} className="stats-section">
       <div className="stats-overlay">
         <div className="stats-container">
           {stats.map((stat, index) => (

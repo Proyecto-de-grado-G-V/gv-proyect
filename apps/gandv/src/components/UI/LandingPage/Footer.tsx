@@ -1,4 +1,4 @@
-import "../../styles/footer.css";
+import "../../../styles/footer.css";
 import instagram from "@/assets/image/instagram.png";
 import facebook from "@/assets/image/facebook.png";
 import whatsApp from "@/assets/image/whatsApp.png";

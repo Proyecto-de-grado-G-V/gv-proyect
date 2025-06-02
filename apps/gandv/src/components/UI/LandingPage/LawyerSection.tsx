@@ -1,10 +1,14 @@
 import React from 'react';
-import '../../styles/lawyerSection.css';
+import '../../../styles/lawyerSection.css';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
-const LawyerSection: React.FC = () => {
+interface LawyerSectionProps {
+  id?: string;
+}
+
+const LawyerSection: React.FC<LawyerSectionProps> = ({ id }) => {
   return (
-    <section className="lawyer-section">
+    <section id={id} className="lawyer-section">
       <h2 className="section-title">Nuestro abogado</h2>
       <div className="icon-separator">⚖️</div>
       <div className="lawyer-cards">

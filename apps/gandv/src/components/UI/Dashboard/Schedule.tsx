@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid"; 
 import interactionPlugin from "@fullcalendar/interaction"; 
-import "../../styles/schedule.css";
+import "../../../styles/schedule.css";
 
 const Schedule = () => {
   const [events, setEvents] = useState<EventType[]>([

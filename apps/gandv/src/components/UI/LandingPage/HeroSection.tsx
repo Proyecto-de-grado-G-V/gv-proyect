@@ -1,10 +1,14 @@
 import React from 'react';
-import '../../styles/heroSection.css';
+import '../../../styles/heroSection.css';
 import { FaBalanceScale } from 'react-icons/fa';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  id?: string;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
   return (
-    <section className="hero-section">
+    <section id={id} className="hero-section">
       <div className="icon-wrapper">
         <FaBalanceScale className="hero-icon" />
       </div>

@@ -1,11 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
-import { RiRobot2Line } from 'react-icons/ri';
-import { sendMessageToChatbot } from '@/app/services/ChatbotService';
-import { marked } from 'marked';
-import '../../styles/floatingChat.css';
+import { useState, useEffect, useRef } from "react";
+import { RiRobot2Line } from "react-icons/ri";
+import { sendMessageToChatbot } from "@/app/services/ChatbotService";
+import { marked } from "marked";
+import { Icon } from "@iconify/react";
+import botIcon from "@iconify-icons/fluent/bot-24-filled";
+import "../../styles/floatingChat.css";
 
 type Message = {
-  type: 'bot' | 'user';
+  type: "bot" | "user";
   text: string;
   time: string;
 };
@@ -13,19 +15,22 @@ type Message = {
 export default function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
     if (isOpen) {
-      const hora = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const hora = new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
       const mensajeInicial: Message = {
-        type: 'bot',
-        text: '¡Hola! ¿En qué puedo ayudarte hoy?',
+        type: "bot",
+        text: "¡Hola! ¿En qué puedo ayudarte hoy?",
         time: hora,
       };
       setMessages([mensajeInicial]);
@@ -37,42 +42,51 @@ export default function FloatingChat() {
   }, [messages]);
 
   const toggleChat = () => {
-    setIsOpen(prev => !prev);
+    setIsOpen((prev) => !prev);
   };
 
   const handleSend = async () => {
-    if (input.trim() === '') return;
+    if (input.trim() === "") return;
 
-    const hora = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const hora = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
     const userMessage: Message = {
-      type: 'user',
+      type: "user",
       text: input,
       time: hora,
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages((prev) => [...prev, userMessage]);
     const userInput = input;
-    setInput('');
+    setInput("");
 
     try {
-      const botResponses = await sendMessageToChatbot('usuario1', userInput);
+      const botResponses = await sendMessageToChatbot("usuario1", userInput);
 
-      const botMessages: Message[] = botResponses.map(res => ({
-        type: 'bot',
+      const botMessages: Message[] = botResponses.map((res) => ({
+        type: "bot",
         text: res.text,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        time: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
       }));
 
-      setMessages(prev => [...prev, ...botMessages]);
+      setMessages((prev) => [...prev, ...botMessages]);
     } catch (error) {
-      console.error('Error comunicándose con el bot:', error);
-      setMessages(prev => [
+      console.error("Error comunicándose con el bot:", error);
+      setMessages((prev) => [
         ...prev,
         {
-          type: 'bot',
-          text: 'Hubo un problema al contactar al bot. Intenta de nuevo.',
-          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          type: "bot",
+          text: "Hubo un problema al contactar al bot. Intenta de nuevo.",
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
         },
       ]);
     }
@@ -83,26 +97,43 @@ export default function FloatingChat() {
       <button
         className="floating-cart"
         onClick={toggleChat}
-        style={{ backgroundColor: isOpen ? '#f0eeed' : '#b38d4f', color: isOpen ? '#b38d4f' : 'white' }}
+        style={{
+          backgroundColor: isOpen ? "#f0eeed" : "#b38d4f",
+          color: isOpen ? "#b38d4f" : "white",
+        }}
       >
-        {isOpen ? '▼' : <RiRobot2Line size={24} />}
+        {isOpen ? "▼" : <Icon icon={botIcon} width={24} height={24} />}
       </button>
 
       {isOpen && (
         <div className="chat-box">
           <div className="chat-header">
-            <RiRobot2Line size={20} />
+            <Icon icon={botIcon} width={20} height={20} />
             <span className="chat-title">V&A</span>
-            <button className="close-chat" onClick={toggleChat}>×</button>
+            <button className="close-chat" onClick={toggleChat}>
+              ×
+            </button>
           </div>
 
           <div className="chat-messages">
             {messages.map((msg, index) => (
               <div key={index} className={`message ${msg.type}`}>
-                {msg.type === 'bot' && <div className="avatar"><RiRobot2Line /></div>}
-                <div className={`bubble ${msg.type === 'bot' ? 'bot-bubble' : 'user-bubble'}`}>
-                  {msg.type === 'bot' ? (
-                    <div dangerouslySetInnerHTML={{ __html: marked.parse(msg.text) }} />
+                {msg.type === "bot" && (
+                  <div className="avatar">
+                    <Icon icon={botIcon} width={20} height={20} />
+                  </div>
+                )}
+                <div
+                  className={`bubble ${
+                    msg.type === "bot" ? "bot-bubble" : "user-bubble"
+                  }`}
+                >
+                  {msg.type === "bot" ? (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: marked.parse(msg.text),
+                      }}
+                    />
                   ) : (
                     msg.text
                   )}
@@ -119,9 +150,11 @@ export default function FloatingChat() {
               placeholder="Escribe tu mensaje aquí..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+              onKeyDown={(e) => e.key === "Enter" && handleSend()}
             />
-            <button className="send-btn" onClick={handleSend}>➤</button>
+            <button className="send-btn" onClick={handleSend}>
+              ➤
+            </button>
           </div>
         </div>
       )}

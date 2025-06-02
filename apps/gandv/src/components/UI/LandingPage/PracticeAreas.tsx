@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/practiceAreas.css";
+import "../../../styles/practiceAreas.css";
 import areas from "../../../data/areasDePractica.json";
 
 interface Area {
@@ -9,9 +9,13 @@ interface Area {
   imagen: string;
 }
 
-const PracticeAreas: React.FC = () => {
+interface PracticeAreaProps {
+  id?: string;
+}
+
+const PracticeAreas: React.FC<PracticeAreaProps> = ({ id }) => {
   return (
-    <section className="areas-de-practica">
+    <section id={id} className="areas-de-practica">
       <h2>Áreas de práctica</h2>
       <div className="divider" />
       <div className="cards-container">

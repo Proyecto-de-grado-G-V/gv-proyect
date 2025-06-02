@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import '../../styles/gallery.css';
+import '../../../styles/gallery.css';
 
 const images = [
   'https://metropolitanhost.com/themes/templatemoster/html/powar/lawzy/assets/img/home-1/540x600.jpg',
@@ -9,15 +9,19 @@ const images = [
   'https://metropolitanhost.com/themes/templatemoster/html/powar/lawzy/assets/img/home-1/540x285-0.jpg',
 ];
 
-const Gallery: React.FC = () => {
+interface GalleryProps {
+  id?: string;
+}
+
+const Gallery: React.FC<GalleryProps> = ({ id }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const closeModal = () => setSelectedIndex(null);
   const nextImage = () => setSelectedIndex((prev) => (prev! + 1) % images.length);
   const prevImage = () => setSelectedIndex((prev) => (prev! - 1 + images.length) % images.length);
 
-  return (
-    <section className="galeria">
+    return (
+      <section id={id} className="galeria">
       <h2>Nuestra galería</h2>
       <div className="divider-icon"><i className="fas fa-balance-scale"></i></div>
 

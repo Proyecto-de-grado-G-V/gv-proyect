@@ -1,4 +1,4 @@
-import "../../styles/faqBanner.css";
+import "../../../styles/faqBanner.css";
 import { useState } from "react";
 import faq from "../../../data/preguntas.json"; 
 

@@ -1,11 +1,15 @@
 import React from "react";
-import "../../styles/heroBanner.css";
+import "../../../styles/heroBanner.css";
 import Image from "next/image";
-import bannerImg from "../../assets/image/banner.jpg"; 
+import bannerImg from "../../../assets/image/banner.jpg"; 
 
-const Banner: React.FC = () => {
+interface HeroBannerProps {
+  id?: string;
+}
+
+const HeroBanner: React.FC<HeroBannerProps> = ({ id }) => {
   return (
-    <section className="banner-container">
+    <section id={id} className="banner-container">
       <div className="banner-content">
         <div className="banner-text">
           <p className="banner-topline">
@@ -36,4 +40,4 @@ const Banner: React.FC = () => {
   );
 };
 
-export default Banner;
+export default HeroBanner;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import '../../styles/report.css';
+import '../../../styles/report.css';
 import expedientesData from '@/data/expedientes.json'
 
 const Report = () => {

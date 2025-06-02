@@ -1,6 +1,6 @@
 .expediente-detalle {
   background: var(--white);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 5px 15px var(--thm-shadow-light);
 }
@@ -23,6 +23,129 @@
   color: var(--gray);
 }
 
+.info {
+  display: flex;
+  gap: 2rem; 
+  flex-wrap: wrap; 
+  align-items: center; 
+}
+
 .info p {
-  margin: 0.5rem 0;
+  margin: 0; 
+  font-size: 1rem; 
+}
+
+.scan-notifications-container {
+  position: relative;
+  display: inline-block;
+}
+
+.scan-notifications-button {
+  width: 50px;
+  height: 50px;
+  background-color: var(--thm-base);
+  color: var(--white);
+  border: none;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.scan-notifications-button:hover {
+  background-color: var(--thm-base-hover);
+  transform: scale(1.1); 
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: var(--thm-secondary);
+  color: var(--white);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scan-notifications-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.notas-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Espaciado entre las secciones */
+  margin-top: 2rem;
+  max-width: 600px; /* Limita el ancho */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notas, .comentarios {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--white);
+  box-shadow: none; /* Elimina la sombra */
+  border: 1px solid var(--thm-border-light); /* Borde sutil */
+}
+
+.notas h3, .comentarios h3 {
+  font-size: 1.2rem;
+  color: var(--thm-secondary);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.add-note-input, .add-comment-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.add-note-input textarea, .add-comment-input textarea {
+  width: 100%;
+  height: 80px;
+  padding: 0.5rem;
+  border: 1px solid var(--thm-border-light); /* Borde sutil */
+  border-radius: 4px;
+  font-size: 0.9rem;
+  resize: none;
+  background-color: var(--white);
+}
+
+.add-note-input button, .add-comment-input button {
+  padding: 0.5rem 1rem;
+  background-color: var(--thm-base);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-note-input button:hover, .add-comment-input button:hover {
+  background-color: var(--thm-base-hover);
+  transform: scale(1.05);
+}
+
+textarea::placeholder {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.notas, .comentarios {
+  border-left: 4px solid var(--thm-base); 
 }
